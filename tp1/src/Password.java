@@ -1,8 +1,6 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -84,41 +82,10 @@ public class Password {
     }
 
     public static String generatePassword(int nbCar) {
-        if (nbCar < 4) {
-            throw new IllegalArgumentException(
-                    "Password length must be at least 4 to include all required character types.");
-        }
 
-        String upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        String lowerCase = "abcdefghijklmnopqrstuvwxyz";
-        String digits = "0123456789";
-        String specialChars = "!@#$%^&*()-_=+";
+        // Code Here
 
-        SecureRandom random = new SecureRandom();
-        List<Character> password = new ArrayList<>();
-
-        // Ensure at least one character from each category
-        password.add(upperCase.charAt(random.nextInt(upperCase.length())));
-        password.add(lowerCase.charAt(random.nextInt(lowerCase.length())));
-        password.add(digits.charAt(random.nextInt(digits.length())));
-        password.add(specialChars.charAt(random.nextInt(specialChars.length())));
-
-        // Fill remaining characters randomly from all categories
-        String allChars = upperCase + lowerCase + digits + specialChars;
-        for (int i = 4; i < nbCar; i++) {
-            password.add(allChars.charAt(random.nextInt(allChars.length())));
-        }
-
-        // Shuffle to avoid predictable order
-        Collections.shuffle(password);
-
-        // Convert list to string
-        StringBuilder passwordStr = new StringBuilder();
-        for (char c : password) {
-            passwordStr.append(c);
-        }
-
-        return passwordStr.toString();
+        return null;
     }
 
     public static void main(String[] args) {
@@ -155,8 +122,10 @@ public class Password {
                         List.of("Abc5", "abcdef123456", "AbCdEf123456", "AbCdEf 123456"));
                 HashMap<String, Boolean> password_map = checkPasswordsList(passwords);
 
-                for (Map.Entry<String, Boolean> entry : password_map.entrySet()) {
-                    System.out.println(entry.getKey() + " -> " + entry.getValue());
+                if (password_map != null) {
+                    for (Map.Entry<String, Boolean> entry : password_map.entrySet()) {
+                        System.out.println(entry.getKey() + " -> " + entry.getValue());
+                    }
                 }
                 break;
 
