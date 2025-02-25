@@ -76,14 +76,26 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        // Code Here
+        // Code here
 
         return null;
     }
 
+    /**
+     * Generates a secure random password with at least:
+     * <ul>
+     * <li>1 uppercase letter</li>
+     * <li>1 lowercase letter</li>
+     * <li>1 digit</li>
+     * <li>1 special character</li>
+     * </ul>
+     * 
+     * @param nbCar The desired length of the password (minimum 4).
+     * @return A randomly generated password that meets the security criteria.
+     */
     public static String generatePassword(int nbCar) {
 
-        // Code Here
+        // Code here
 
         return null;
     }
