@@ -3,6 +3,7 @@
     "editor.formatOnSave": true,
     "java.saveActions.organizeImports": true,
     "cSpell.words": [
-        "ensai"
+        "ensai",
+        "isbn"
     ],
 }
