@@ -1,5 +1,7 @@
 package tp2.src.main.java.edu.ensai.library;
 
+import tp2bis.Author;
+
 public class Book {
     // Attributes
     private String isbn;
@@ -20,26 +22,6 @@ public class Book {
     @Override
     public String toString() {
         return "Book " + title + " written by " + author.toString();
-    }
-
-    public String getIsbn() {
-        return this.isbn;
-    }
-
-    public String getTitle() {
-        return this.title;
-    }
-
-    public Author getAuthor() {
-        return this.author;
-    }
-
-    public int getYear() {
-        return this.year;
-    }
-
-    public int getPageCount() {
-        return this.pageCount;
     }
 
 }

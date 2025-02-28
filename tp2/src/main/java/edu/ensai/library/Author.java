@@ -1,13 +1,17 @@
 package tp2.src.main.java.edu.ensai.library;
 
-public class Author extends Person {
+public class Author {
 
     // Attributes
+    public String name;
+    public int age;
     public String nationality;
 
     // Constructor
-    public Author(String firstName, String lastName, int age, String nationality) {
-        super(firstName, lastName, age);
+    public Author(String name, int age, String nationality) {
+        this.name = name;
+        this.age = age;
         this.nationality = nationality;
     }
+
 }
