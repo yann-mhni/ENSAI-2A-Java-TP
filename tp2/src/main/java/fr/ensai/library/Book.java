@@ -1,8 +1,10 @@
 package fr.ensai.library;
 
-import tp2bis.Author;
-
+/**
+ * Represents a book.
+ */
 public class Book {
+
     // Attributes
     private String isbn;
     private String title;
@@ -10,13 +12,19 @@ public class Book {
     private int year;
     private int pageCount;
 
-    // Constructor
+    /**
+     * Constructs a new Book object.
+     */
     public Book(String isbn, String title, Author author, int year, int pageCount) {
         this.isbn = isbn;
         this.title = title;
         this.author = author;
         this.year = year;
         this.pageCount = pageCount;
+    }
+
+    public Author getAuthor() {
+        return author;
     }
 
     @Override
