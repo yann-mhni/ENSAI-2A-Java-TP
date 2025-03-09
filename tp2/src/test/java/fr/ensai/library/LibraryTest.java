@@ -41,4 +41,5 @@ class LibraryTest {
         // THEN
         assertNull(foundLoan);
     }
+
 }
