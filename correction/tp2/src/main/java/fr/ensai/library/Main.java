@@ -1,18 +1,28 @@
 package fr.ensai.library;
 
+import java.util.ArrayList;
+
 public class Main {
-
     public static void main(String[] args) {
+        Library library = new Library("City Library");
 
-        Author tolkien = new Author("J.R.R. Tolkien", 81, "UK");
+        String csvFilePath = "books.csv";
+        library.loadBooksFromCSV(csvFilePath);
 
-        Book fellowshipOfTheRing = new Book(
-                "978-0-618-26025-6",
-                "The Fellowship of the Ring",
-                tolkien,
-                1954,
-                423);
+        library.addIem(new Magazine("1234-5678", "Tech Monthly", "Vol. 15, Issue 3", 2023, 120));
+        library.addIem(new Magazine("9876-5432", "Vogue Style", "September Edition", 2024, 250));
+        library.addIem(new Magazine("1122-3344", "Scientific Discoveries", "Issue 247", 2022, 88));
 
-        System.out.println(fellowshipOfTheRing.toString());
+        library.displayItems();
+
+        System.out.println("\n**********************************************");
+        System.out.println("* Books by Stephen King                      *");
+        System.out.println("**********************************************");
+
+        ArrayList<Book> skingsBooks = library.getBooksByAuthor(new Author("Stephen King"));
+
+        for (Book b : skingsBooks) {
+            System.out.println(b);
+        }
     }
 }
