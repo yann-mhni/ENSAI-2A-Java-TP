@@ -10,22 +10,13 @@
 </head>
 
 <body>
+
+    <div th:insert="~{fragments/navbar :: navbar}"></div>
+
     <div class="container">
         <h1>Hello!</h1>
-        <p>Welcome to <span th:text="${appName}">Our App</span></p>
+        <p>Welcome to The Running App</p>
 
-        <!-- Navigation Links -->
-        <nav>
-            <ul class="nav">
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/participant}">List of Participants</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" th:href="@{/competition}">List of Competitions</a>
-                </li>
-                <!-- Add more links as needed -->
-            </ul>
-        </nav>
     </div>
 
     <!-- Include Bootstrap JS for functionality -->

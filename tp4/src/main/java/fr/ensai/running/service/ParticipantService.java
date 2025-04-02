@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +14,8 @@ import fr.ensai.running.repository.ParticipantRepository;
 
 @Service
 public class ParticipantService {
+
+    private static final Logger log = LoggerFactory.getLogger(ParticipantService.class);
 
     @Autowired
     private ParticipantRepository participantRepository;
@@ -33,5 +37,6 @@ public class ParticipantService {
 
     public void deleteById(Long id) {
         participantRepository.deleteById(id);
+        log.warn("Participant {} deleted", id);
     }
 }

@@ -14,26 +14,32 @@ import org.springframework.stereotype.Component;
 @Aspect
 @Component
 public class MethodLoggingAspect {
-    private static final Logger log = LoggerFactory.getLogger(MethodLoggingAspect.class);
+
+    private static final String pointCutStr = "execution(* fr.ensai..*(..)) || this(org.springframework.data.repository.CrudRepository+) && execution(* *(..))";
 
     private static int nbIdent = 0;
 
     /**
      * Log before method execution
      */
-    @Before("execution(* fr.ensai..*(..))")
+    @Before(pointCutStr)
     public void logBefore(JoinPoint joinPoint) {
-        String methodName = joinPoint.getSignature().toShortString();
+        String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
+        String className = joinPoint.getSignature().getDeclaringTypeName();
+        Logger log = LoggerFactory.getLogger(className);
+
+        String argsStr = "";
         if (args != null && args.length > 0) {
-            String argsStr = Arrays.stream(args)
+            argsStr = Arrays.stream(args)
                     .map(String::valueOf)
                     .collect(Collectors.joining(", "));
             if (argsStr.length() > 100) {
                 argsStr = argsStr.substring(0, 100) + "...";
             }
-            methodName = methodName.replace("(..)", "(" + argsStr + ")");
         }
+
+        methodName += "(" + argsStr + ")";
         log.info("{} - BEGIN", " ".repeat(nbIdent * 4) + methodName);
         nbIdent++;
     }
@@ -41,23 +47,25 @@ public class MethodLoggingAspect {
     /**
      * Log after method execution
      */
-    @AfterReturning(pointcut = "execution(* fr.ensai..*(..))", returning = "result")
+    @AfterReturning(pointcut = pointCutStr, returning = "result")
     public void logAfterReturning(JoinPoint joinPoint, Object result) {
-        nbIdent--;
-        String methodName = joinPoint.getSignature().toShortString();
-
+        String methodName = joinPoint.getSignature().getName();
         Object[] args = joinPoint.getArgs();
+        String className = joinPoint.getSignature().getDeclaringTypeName();
+        Logger log = LoggerFactory.getLogger(className);
+
+        nbIdent--;
+
+        String argsStr = "";
         if (args != null && args.length > 0) {
-            String argsStr = Arrays.stream(args)
+            argsStr = Arrays.stream(args)
                     .map(String::valueOf)
                     .collect(Collectors.joining(", "));
             if (argsStr.length() > 100) {
                 argsStr = argsStr.substring(0, 100) + "...";
             }
-            methodName = methodName.replace("(..)", "(" + argsStr + ")");
         }
-
-        log.info("{} - END", " ".repeat(nbIdent * 4) + methodName);
+        methodName += "(" + argsStr + ")";
 
         if (result != null) {
             String resultStr = String.valueOf(result);
@@ -67,5 +75,7 @@ public class MethodLoggingAspect {
 
             log.info(" ".repeat(nbIdent * 4) + "  └─> Output: {}", resultStr);
         }
+
+        log.info("{} - END", " ".repeat(nbIdent * 4) + methodName);
     }
 }

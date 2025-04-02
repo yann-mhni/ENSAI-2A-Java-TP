@@ -20,26 +20,26 @@ public class ParticipantController {
     private ParticipantService participantService;
 
     @GetMapping()
-    public String findAll(Model model) {
+    public String findAllParticipants(Model model) {
         model.addAttribute("participants", participantService.findAll());
         return "allparticipants";
     }
 
     @GetMapping("/addNew")
-    public String addNewEmployee(Model model) {
+    public String addNewParticipant(Model model) {
         Participant participant = new Participant();
         model.addAttribute("participant", participant);
         return "createParticipant";
     }
 
     @PostMapping("/save")
-    public String saveEmployee(@ModelAttribute("participant") Participant participant) {
+    public String saveParticipant(@ModelAttribute("participant") Participant participant) {
         participantService.save(participant);
         return "redirect:/participant";
     }
 
     @GetMapping("/delete/{id}")
-    public String deleteById(@PathVariable(value = "id") long id) {
+    public String deleteParticipantById(@PathVariable(value = "id") long id) {
         participantService.deleteById(id);
         return "redirect:/participant";
 
