@@ -1,5 +1,6 @@
 package fr.ensai.running.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ import lombok.Setter;
 public class Athlete {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_athlete")
     private long id;
     private String firstName;
     private String lastName;

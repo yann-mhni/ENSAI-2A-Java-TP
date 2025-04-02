@@ -36,7 +36,10 @@
                     <td th:text="${#temporals.format(c.eventDate, 'yyyy-MM-dd')}">Event Date</td>
                     <td th:text="${c.distance}">Distance</td>
                     <td th:text="${c.maxAthletes}">Max Athletes</td>
-                    <td><a th:href="@{/competition/delete/{id}(id=${c.id})}" class="btn btn-danger">Delete</a></td>
+                    <td><a th:href="@{/competition/{id}/athletes(id=${c.id})}" class="btn btn-primary">Registered
+                            Athletes</a>
+                        <a th:href="@{/competition/delete/{id}(id=${c.id})}" class="btn btn-danger">Delete</a>
+                    </td>
                 </tr>
             </tbody>
         </table>
