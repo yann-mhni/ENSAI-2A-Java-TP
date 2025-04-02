@@ -37,12 +37,12 @@ CREATE TABLE competition (
     city           VARCHAR(255),
     event_date     DATE,
     distance       FLOAT,
-    maxAthletes    INTEGER
+    max_athletes   INTEGER
 );
 
-INSERT INTO competition (designation, city, event_date, distance, maxAthletes) VALUES
-('Semi-marathon de Liffré', 'Liffré', '2024-04-06', 21.1, 500),
-('100km de Crevin', 'Crevin', '2024-04-05', 100, 100),
-('Rennes Urban Trail', 'Rennes', '2024-04-27', 24, 750),
-('Tour de l''île d''Arz', 'Île d''Arz', '2024-05-17', 10, 300),
-('Trail de l''Enfer', 'Plouguiel', '2024-07-06', 18, 200);
+INSERT INTO competition (id, designation, city, event_date, distance, max_athletes) VALUES
+(88880, 'Semi-marathon de Liffré', 'Liffré', '2024-04-06', 21.1, 500),
+(88881, '100km de Crevin', 'Crevin', '2024-04-05', 100, 100),
+(88882, 'Rennes Urban Trail', 'Rennes', '2024-04-27', 24, 750),
+(88883, 'Tour de l''île d''Arz', 'Île d''Arz', '2024-05-17', 10, 300),
+(88884, 'Trail de l''Enfer', 'Plouguiel', '2024-07-06', 18, 200);
