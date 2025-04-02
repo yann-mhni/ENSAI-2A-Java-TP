@@ -2,7 +2,6 @@ package fr.ensai.running.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -20,8 +19,8 @@ public class AthleteService {
     @Autowired
     private AthleteRepository athleteRepository;
 
-    public Optional<Athlete> findById(Long id) {
-        return athleteRepository.findById(id);
+    public Athlete findById(Long id) {
+        return athleteRepository.findById(id).orElse(null);
     }
 
     public List<Athlete> findAll() {

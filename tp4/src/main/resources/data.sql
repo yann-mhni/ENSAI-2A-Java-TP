@@ -59,7 +59,6 @@ CREATE TABLE registration (
     registration_date     DATE
 );
 
-
 INSERT INTO registration (id_registration, id_athlete, id_competition, registration_date) VALUES
 (77770, 99990, 88880, '2024-03-01'),
 (77771, 99991, 88881, '2024-03-02'),
