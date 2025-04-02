@@ -25,6 +25,6 @@ public class Competition {
     private LocalDate eventDate;
 
     private float distance;
-    private int maxParticipants;
+    private int maxAthletes;
 
 }

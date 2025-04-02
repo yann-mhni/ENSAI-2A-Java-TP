@@ -11,10 +11,10 @@
 <body>
     <div th:insert="~{fragments/navbar :: navbar}"></div>
     <div class="container" align="center">
-        <h1>Add a new Participant</h1>
+        <h1>Add a new Athlete</h1>
         <hr>
 
-        <form action="#" th:action="@{/participant/save}" th:object="${participant}" method="POST">
+        <form action="#" th:action="@{/athlete/save}" th:object="${athlete}" method="POST">
             <input type="text" th:field="*{firstName}" placeholder="First Name" class="form-control mb-4 col-4">
             <input type="text" th:field="*{lastName}" placeholder="Last Name" class="form-control mb-4 col-4">
             <input type="number" th:field="*{age}" placeholder="Age" class="form-control mb-4 col-4" min="0" required>
@@ -29,7 +29,7 @@
 
         <hr>
 
-        <a th:href="@{/participant}"> Back to Participant List</a>
+        <a th:href="@{/athlete}"> Back to Athlete List</a>
     </div>
 </body>
 

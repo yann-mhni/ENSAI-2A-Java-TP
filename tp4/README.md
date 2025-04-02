@@ -19,8 +19,8 @@ https://gayerie.dev/docs/spring/spring/introduction.html#
 
 
 https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/
-https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/participant
-https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/participant/addNew
+https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/athlete
+https://user-ludo2ne-774720-user-9000.user.lab.sspcloud.fr/athlete/addNew
 
 
 

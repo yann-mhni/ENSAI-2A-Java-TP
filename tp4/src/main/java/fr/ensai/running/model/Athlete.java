@@ -10,7 +10,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Participant {
+public class Athlete {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -21,7 +21,7 @@ public class Participant {
 
     @Override
     public String toString() {
-        return "Participant (" + firstName + " " + lastName + ", " + age + ")";
+        return "Athlete (" + firstName + " " + lastName + ", " + age + ")";
     }
 
 }

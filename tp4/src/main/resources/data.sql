@@ -1,7 +1,7 @@
-DROP TABLE IF EXISTS participant;
+DROP TABLE IF EXISTS athlete;
 
 -- Create the table
-CREATE TABLE participant (
+CREATE TABLE athlete (
     id SERIAL PRIMARY KEY,
     first_name VARCHAR(255),
     last_name VARCHAR(255),
@@ -10,7 +10,7 @@ CREATE TABLE participant (
 );
 
 -- Insert 10 rows into the table
-INSERT INTO participant (id, first_name, last_name, age, gender) VALUES
+INSERT INTO athlete (id, first_name, last_name, age, gender) VALUES
 (99990, 'Alice', 'Smith', 25, 'Female'),
 (99991, 'Bob', 'Johnson', 30, 'Male'),
 (99992, 'Charlie', 'Brown', 22, 'Male'),
@@ -30,10 +30,10 @@ CREATE TABLE competition (
     designation      VARCHAR(255) NOT NULL,
     event_date       DATE,
     distance         FLOAT,
-    max_participants INTEGER
+    max_athletes INTEGER
 );
 
-INSERT INTO competition (id, designation, event_date, distance, max_participants) VALUES
+INSERT INTO competition (id, designation, event_date, distance, max_athletes) VALUES
 (880, 'Spring Sprint', '2024-03-20', 5.0, 100),
 (881, 'Summer Marathon', '2024-06-15', 42.2, 500),
 (882, 'Autumn Half', '2024-09-22', 21.1, 300),

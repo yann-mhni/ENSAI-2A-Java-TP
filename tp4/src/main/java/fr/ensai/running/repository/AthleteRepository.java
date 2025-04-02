@@ -2,8 +2,8 @@ package fr.ensai.running.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import fr.ensai.running.model.Participant;
+import fr.ensai.running.model.Athlete;
 
-public interface ParticipantRepository extends CrudRepository<Participant, Long> {
+public interface AthleteRepository extends CrudRepository<Athlete, Long> {
     void deleteById(Long id);
 }
