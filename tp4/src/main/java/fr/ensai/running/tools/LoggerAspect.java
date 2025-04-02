@@ -48,7 +48,7 @@ public class LoggerAspect {
         String className = joinPoint.getSignature().getDeclaringTypeName();
         Logger log = LoggerFactory.getLogger(className);
 
-        log.info("{} - BEGIN", " ".repeat(nbIdent * 4) + this.getMethodName(joinPoint));
+        log.debug("{} - BEGIN", " ".repeat(nbIdent * 4) + this.getMethodName(joinPoint));
         nbIdent++;
     }
 
@@ -68,9 +68,9 @@ public class LoggerAspect {
                 resultStr = resultStr.substring(0, MAX_ARG_LENGTH) + "...";
             }
 
-            log.info(" ".repeat(nbIdent * 4) + "  └─> Output: {}", resultStr);
+            log.debug(" ".repeat(nbIdent * 4) + "  └─> Output: {}", resultStr);
         }
 
-        log.info("{} - END", " ".repeat(nbIdent * 4) + this.getMethodName(joinPoint));
+        log.debug("{} - END", " ".repeat(nbIdent * 4) + this.getMethodName(joinPoint));
     }
 }

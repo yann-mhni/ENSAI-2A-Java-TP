@@ -30,7 +30,7 @@ logging:
   level:
     root: ERROR
     fr:
-      ensai: INFO
+      ensai: DEBUG
     org:
       springframework:
         boot:
@@ -39,7 +39,7 @@ logging:
               tomcat: INFO
         data:
           repository:
-            CrudRepository: INFO
+            CrudRepository: DEBUG
 
 management:
   endpoints:
