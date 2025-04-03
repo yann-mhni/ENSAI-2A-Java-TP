@@ -22,14 +22,14 @@ public class AthleteController {
     @GetMapping()
     public String findAllAthletes(Model model) {
         model.addAttribute("athletes", athleteService.findAll());
-        return "allAthletes";
+        return "allAthletes"; // allAthlete.html
     }
 
     @GetMapping("/addNew")
     public String addNewAthlete(Model model) {
         Athlete athlete = new Athlete();
         model.addAttribute("athlete", athlete);
-        return "createAthlete";
+        return "createAthlete"; // createAthlete.html
     }
 
     @PostMapping("/save")

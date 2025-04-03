@@ -13,6 +13,6 @@ public class RootController {
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
-        return "home";
+        return "home"; // home.html
     }
 }
