@@ -7,9 +7,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class RootController {
-    @Value("${spring.application.name}")
+    @Value("${spring.application.name}") // Get a value from application.yml
     String appName;
 
+    /**
+     * Home page
+     */
     @GetMapping("/")
     public String homePage(Model model) {
         model.addAttribute("appName", appName);
